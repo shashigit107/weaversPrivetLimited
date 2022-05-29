@@ -7,8 +7,8 @@ export default class App extends react.Component {
     super();
     this.state = {
       boxCount: 2,
-      widthCon:100,
-      heightCon:380,
+      widthContainer:100,
+      heightContainer:380,
       width: 50,
       height: 190,
       arr: [],
@@ -22,11 +22,11 @@ export default class App extends react.Component {
 
   }
   
-  automatic=(trueFlase)=>{
+  updateArr=(trueFlase)=>{
     if(trueFlase){
       for (let i = 0; i < (this.state.boxCount * this.state.boxCount); i++) {
         this.state.arr.push(i);
-        console.log("shashiranjan",this.state.boxCount )
+      
       }
         this.setState({flag:false,boxCount:this.state.boxCount+1})
      
@@ -41,8 +41,8 @@ export default class App extends react.Component {
       this.setState({flag:true})
 
     this.setState({
-      width: ((this.state.widthCon) / this.state.boxCount),
-      height: ((this.state.heightCon) / this.state.boxCount)
+      width: ((this.state.widthContainer) / this.state.boxCount),
+      height: ((this.state.heightContainer) / this.state.boxCount)
     })
     
   }
@@ -61,7 +61,7 @@ export default class App extends react.Component {
           
           )
         })}
-        {this.automatic(this.state.flag)}
+        {this.updateArr(this.state.flag)}
 
       </View>
 
